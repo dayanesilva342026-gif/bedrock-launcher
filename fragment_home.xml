@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MINECRAFT"
+            android:textColor="@color/text_white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BEDROCK LAUNCHER"
+            android:textColor="@color/accent_green"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/status_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Verificando instalação..."
+                    android:textColor="@color/text_white"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="14dp" />
+
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="▶  JOGAR"
+                    android:textColor="@color/text_white"
+                    android:backgroundTint="@color/accent_green"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="🛒  COMPRAR NA PLAY STORE"
+                    android:textColor="@color/text_white"
+                    android:backgroundTint="@color/accent_green"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
