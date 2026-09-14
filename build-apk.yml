@@ -1,0 +1,32 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Instalar workload MAUI
+        run: dotnet workload install maui-android
+
+      - name: Restaurar dependências
+        run: dotnet restore
+
+      - name: Compilar APK (Release)
+        run: dotnet publish -f net8.0-android -c Release -o build-output
+
+      - name: Enviar APK como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: BedrockLauncher-APK
+          path: build-output/*.apk
